@@ -11,6 +11,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise', '~> 3.1.0'
 gem 'the_role', '~> 2.1.0'
 gem 'bootstrap-sass', '~> 2.3.2.2'
+gem 'omniauth'
+gem 'omniauth-facebook', '~> 1.4.1'
 group :doc do
   gem 'sdoc', require: false
 end
