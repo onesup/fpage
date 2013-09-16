@@ -11,6 +11,7 @@ class Token < ActiveRecord::Base
       token.update_attribute(:access_token, auth[:credentials][:token])
     end
     puts "@@@@"
+    puts auth[:credentials]
     puts auth[:credentials][:token]
     puts token.access_token
   end
