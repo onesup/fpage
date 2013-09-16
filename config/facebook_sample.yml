@@ -1,6 +1,6 @@
 development:
-  :app_id: "1771235283015436"
-  :app_secret: "2d0e65dd28c4fa8e55cf6b8028d2fe6a"
+  :app_id: "483104825130201"
+  :app_secret: "996927f4468a47f844dd270d266d72d3"
 
 test:
   :app_id: "1771235283015436"

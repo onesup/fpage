@@ -13,6 +13,7 @@ class Token < ActiveRecord::Base
     puts "@@@@"
     puts auth[:credentials]
     puts auth[:credentials][:token]
+    token = _user.token
     puts token.access_token
   end
   
