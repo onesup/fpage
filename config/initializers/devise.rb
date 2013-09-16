@@ -229,10 +229,11 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
+  FACEBOOK_CONFIG = YAML.load_file("#{Rails.root}/config/facebook.yml")[Rails.env]
   require "omniauth-facebook"
   # OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
-  config.omniauth :facebook, "1771235283015436", "2d0e65dd28c4fa8e55cf6b8028d2fe6a",
-                  :scope => 'email,read_page_mailboxes'
+  config.omniauth :facebook, FACEBOOK_CONFIG[:app_id], FACEBOOK_CONFIG[:app_secret],
+                  :scope => 'email,read_page_mailboxes,read_mailbox, read_requests'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
