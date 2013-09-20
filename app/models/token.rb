@@ -8,13 +8,8 @@ class Token < ActiveRecord::Base
         :access_token => auth[:credentials][:token]
       )
     else
-      token.update_attribute(:access_token, auth[:credentials][:token])
+      token.update_attributes!(access_token: auth[:credentials][:token])
     end
-    puts "@@@@"
-    puts auth[:credentials]
-    puts auth[:credentials][:token]
-    token = _user.token
-    puts token.access_token
   end
   
 end
