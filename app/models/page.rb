@@ -11,9 +11,9 @@ class Page < ActiveRecord::Base
     page_ids = Array.new
     pages.each{|page| page_ids << page["id"]}
     page_ids.each do |page_id|
-      page_object = graph.get_object(page_id, {"fields" => "name, link, category_list, is_published, can_post, 
+      page_object = future { graph.get_object(page_id, {"fields" => "name, link, category_list, is_published, can_post, 
                                       likes, location, phone, checkins, picture, cover, website, 
-                                      talking_about_count, global_brand_parent_page, access_token, hours"})
+                                      talking_about_count, global_brand_parent_page, access_token, hours"}) }
       if exists?(uid: page_id).nil?
         Page.create!(
           uid: page_id,

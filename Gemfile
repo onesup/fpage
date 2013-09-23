@@ -14,6 +14,7 @@ gem 'bootstrap-sass', '~> 2.3.2.2'
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'koala', "~> 1.7.0rc1"
+gem 'futuroscope'# , "~> 0.1.5"
 
 group :doc do
   gem 'sdoc', require: false
