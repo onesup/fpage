@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923190117) do
+ActiveRecord::Schema.define(version: 20130923220754) do
 
   create_table "pages", force: true do |t|
     t.string   "title"
@@ -21,19 +21,19 @@ ActiveRecord::Schema.define(version: 20130923190117) do
     t.string   "name"
     t.string   "link"
     t.string   "category_list"
-    t.string   "is_published"
-    t.string   "can_post"
-    t.string   "likes"
-    t.string   "location"
+    t.boolean  "is_published",             limit: 255
+    t.boolean  "can_post",                 limit: 255
+    t.integer  "likes",                    limit: 255
+    t.text     "location",                 limit: 255
     t.string   "phone"
-    t.string   "checkins"
+    t.integer  "checkins",                 limit: 255
     t.string   "picture"
-    t.string   "cover"
+    t.text     "cover",                    limit: 255
     t.string   "website"
-    t.string   "talking_about_count"
-    t.string   "global_brand_parent_page"
+    t.integer  "talking_about_count",      limit: 255
+    t.text     "global_brand_parent_page", limit: 255
     t.string   "access_token"
-    t.string   "hours"
+    t.text     "hours",                    limit: 255
   end
 
   create_table "tokens", force: true do |t|
