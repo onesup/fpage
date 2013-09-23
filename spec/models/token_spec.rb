@@ -16,4 +16,9 @@ describe Token do
     expect(user.token.access_token).to eql("123")
   end
   
+  it "에 대한 polymorphic 설정이 됨" do
+    t = Token.create
+    expect(t.identifiable).to eql(nil)
+  end
+  
 end
