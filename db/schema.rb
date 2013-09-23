@@ -11,14 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916065836) do
+ActiveRecord::Schema.define(version: 20130923135030) do
+
+  create_table "pages", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tokens", force: true do |t|
     t.string   "access_token"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "expired_at"
+    t.integer  "identifiable_id"
+    t.string   "identifiable_type"
   end
+
+  add_index "tokens", ["identifiable_id", "identifiable_type"], name: "index_tokens_on_identifiable_id_and_identifiable_type"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

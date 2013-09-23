@@ -1,5 +1,5 @@
 class Token < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :identifiable, polymorphic: true
   
   def self.create_or_update_token!(_user, auth)
     token = _user.token
