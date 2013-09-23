@@ -2,9 +2,14 @@
 
 FactoryGirl.define do
   factory :user do
-    trait :user1 do
-      email "user1@gmail.com"
+    trait :user_without_token do
+      email "no_token@gmail.com"
       password "11111111"
+    end
+    trait :user_with_token do
+      email "with_token@gmail.com"
+      password "11111111"
+      token
     end
   end
 end
