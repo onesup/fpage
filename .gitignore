@@ -5,7 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 /config/facebook.yml
-
+/config/test_token.yml
 # Ignore bundler config.
 /.bundle
 

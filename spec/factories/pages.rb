@@ -2,6 +2,9 @@
 
 FactoryGirl.define do
   factory :page do
-    title "MyString"
+    uid 
+    trait :blahblah do
+      
+    end
   end
 end

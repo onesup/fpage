@@ -11,12 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923135030) do
+ActiveRecord::Schema.define(version: 20130923190117) do
 
   create_table "pages", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "link"
+    t.string   "category_list"
+    t.string   "is_published"
+    t.string   "can_post"
+    t.string   "likes"
+    t.string   "location"
+    t.string   "phone"
+    t.string   "checkins"
+    t.string   "picture"
+    t.string   "cover"
+    t.string   "website"
+    t.string   "talking_about_count"
+    t.string   "global_brand_parent_page"
+    t.string   "access_token"
+    t.string   "hours"
   end
 
   create_table "tokens", force: true do |t|
