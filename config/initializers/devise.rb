@@ -233,7 +233,7 @@ Devise.setup do |config|
   require "omniauth-facebook"
   # OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
   config.omniauth :facebook, FACEBOOK_CONFIG[:app_id], FACEBOOK_CONFIG[:app_secret],
-                  :scope => 'email,read_page_mailboxes,read_mailbox, read_requests'
+                  :scope => 'email, read_page_mailboxes, read_mailbox, read_requests'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
