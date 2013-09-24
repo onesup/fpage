@@ -7,12 +7,12 @@ class CreatePages < ActiveRecord::Migration
       t.string :link
       t.string :category_list
       t.string :phone
-      t.string :picture
       t.string :website
       t.string :access_token
-      t.string :desc
-      t.string :desc_html
+      t.string :description
+      t.string :description_html
       t.string :about
+      t.text :picture
       t.text :location
       t.text :cover
       t.text :hours
