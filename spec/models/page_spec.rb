@@ -10,5 +10,6 @@ describe Page do
     expect(Page.where(uid: page_id).count).to eql(1) 
     expect(Page.count).to be >= 1
     expect(page_ids).to be_a_kind_of(Array)
+    
   end
 end

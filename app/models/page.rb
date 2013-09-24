@@ -7,6 +7,8 @@ class Page < ActiveRecord::Base
   serialize :location
   serialize :cover
   serialize :picture
+  serialize :category_list
+  serialize :hours
     
   def self.fetch_page_list(user_token)
     graph = Koala::Facebook::API.new(user_token)

@@ -5,13 +5,14 @@ class CreatePages < ActiveRecord::Migration
       t.string :uid
       t.string :name
       t.string :link
-      t.string :category_list
+      
       t.string :phone
       t.string :website
       t.string :access_token
       t.string :description
       t.string :description_html
       t.string :about
+      t.text :category_list
       t.text :picture
       t.text :location
       t.text :cover
