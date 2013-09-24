@@ -11,29 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923220754) do
+ActiveRecord::Schema.define(version: 20130923135030) do
 
   create_table "pages", force: true do |t|
     t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "uid"
     t.string   "name"
     t.string   "link"
     t.string   "category_list"
-    t.boolean  "is_published",             limit: 255
-    t.boolean  "can_post",                 limit: 255
-    t.integer  "likes",                    limit: 255
-    t.text     "location",                 limit: 255
     t.string   "phone"
-    t.integer  "checkins",                 limit: 255
     t.string   "picture"
-    t.text     "cover",                    limit: 255
     t.string   "website"
-    t.integer  "talking_about_count",      limit: 255
-    t.text     "global_brand_parent_page", limit: 255
     t.string   "access_token"
-    t.text     "hours",                    limit: 255
+    t.string   "desc"
+    t.string   "desc_html"
+    t.string   "about"
+    t.text     "location"
+    t.text     "cover"
+    t.text     "hours"
+    t.text     "global_brand_parent_page"
+    t.boolean  "is_published"
+    t.boolean  "can_post"
+    t.integer  "likes"
+    t.integer  "checkins"
+    t.integer  "talking_about_count"
+    t.integer  "unread_message_count"
+    t.integer  "unread_notif_count"
+    t.integer  "unseen_message_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tokens", force: true do |t|
@@ -46,7 +52,7 @@ ActiveRecord::Schema.define(version: 20130923220754) do
     t.string   "identifiable_type"
   end
 
-  add_index "tokens", ["identifiable_id", "identifiable_type"], name: "index_tokens_on_identifiable_id_and_identifiable_type"
+  add_index "tokens", ["identifiable_id", "identifiable_type"], name: "index_tokens_on_identifiable_id_and_identifiable_type", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -66,7 +72,7 @@ ActiveRecord::Schema.define(version: 20130923220754) do
     t.string   "name"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
