@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20130923135030) do
     t.string   "identifiable_type"
   end
 
-  add_index "tokens", ["identifiable_id", "identifiable_type"], name: "index_tokens_on_identifiable_id_and_identifiable_type", using: :btree
+  add_index "tokens", ["identifiable_id", "identifiable_type"], name: "index_tokens_on_identifiable_id_and_identifiable_type"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20130923135030) do
     t.string   "name"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
