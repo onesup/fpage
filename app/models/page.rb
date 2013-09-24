@@ -1,3 +1,5 @@
+require 'futuroscope/convenience'
+
 class Page < ActiveRecord::Base
   has_one :token, as: :identifiable
   validates :uid, uniqueness: true
