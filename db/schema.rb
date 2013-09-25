@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20130923135030) do
   create_table "tokens", force: true do |t|
     t.string   "access_token"
     t.integer  "user_id"
+    t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "expired_at"

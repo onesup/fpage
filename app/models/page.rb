@@ -9,7 +9,8 @@ class Page < ActiveRecord::Base
   serialize :picture
   serialize :category_list
   serialize :hours
-    
+  serialize :global_brand_parent_page
+  
   def self.fetch_page_list(user_token)
     graph = Koala::Facebook::API.new(user_token)
     pages = graph.get_connection('me', 'accounts')
@@ -30,10 +31,14 @@ class Page < ActiveRecord::Base
     page_objects.each do |page_object|
       page_id = page_object["id"]
       page_object["uid"] = page_object["id"]
+      access_token = page_object["access_token"]
       if exists?(uid: page_id).nil?
-        Page.create!(page_object) 
+        page = Page.create!(page_object) 
       else
-        find_by_uid(page_id).update!(page_object)
+        page = find_by_uid(page_id).update!(page_object)
+      end
+      if page.class == Page
+        Token.create_or_update_token!(page, access_token)
       end
     end
     

@@ -5,7 +5,6 @@ class CreatePages < ActiveRecord::Migration
       t.string :uid
       t.string :name
       t.string :link
-      
       t.string :phone
       t.string :website
       t.string :access_token

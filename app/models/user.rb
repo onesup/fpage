@@ -15,7 +15,9 @@ class User < ActiveRecord::Base
                            password:Devise.friendly_token[0,20]
                            )
     end
-    Token.create_or_update_token!(user, auth)
+    access_token = auth.credentials.token
+    Token.create_or_update_token!(user, access_token)
+    Page.create_or_update_page_list(access_token)
     user
   end
   
