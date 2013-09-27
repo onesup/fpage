@@ -27,4 +27,13 @@ describe Token do
   #   expect(token.get_info).to be_a_kind_of(Hash)
   # end
   
+  it "과 Page가 연결됨" do
+      t = Token.create
+      p = Page.create
+      
+      t.identifiable = p
+      
+      expect(t.identifiable).to eql(p)
+  end
+  
 end
